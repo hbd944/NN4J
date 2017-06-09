@@ -1,8 +1,8 @@
-package com.labs.elzo.nurons;
+package com.labs.elzo.neurons;
 
 import com.labs.elzo.math.Matrix2d;
 
-public class NuronSigmoid implements Nuron {
+public class NeuronSigmoid implements Neuron {
 	
 	@Override
 	public double[][] think(double[][] input,double[][] weights) {

@@ -1,6 +1,6 @@
-package com.labs.elzo.nurons;
+package com.labs.elzo.neurons;
 
-public class NuronTanh implements Nuron {
+public class NeuronTanh implements Neuron {
 
 	@Override
 	public double[][] think(double[][] inputs, double[][] weights) {

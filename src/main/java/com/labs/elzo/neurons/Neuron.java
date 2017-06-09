@@ -1,5 +1,5 @@
-package com.labs.elzo.nurons;
+package com.labs.elzo.neurons;
 
-public interface Nuron {
+public interface Neuron {
 	public double[][] think(double[][] inputs,double[][] weights);
 }

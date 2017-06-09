@@ -2,24 +2,24 @@ package com.labs.elzo.service;
 import java.util.Random;
 
 import com.labs.elzo.math.Matrix2d;
-import com.labs.elzo.nurons.Nuron;
-import com.labs.elzo.nurons.NuronSigmoid;
+import com.labs.elzo.neurons.Neuron;
+import com.labs.elzo.neurons.NeuronSigmoid;
 
-public class NuralNetwork {
+public class NeuralNetwork {
 	long seed;
 	Random rand;
 	double[][] weights;
 	double[][] input;
 	double[][] output;
 
-	public NuralNetwork(int inputs, int outputs) {
+	public NeuralNetwork(int inputs, int outputs) {
 		rand = new Random();
 		seed = rand.nextInt();
 		rand = new Random(seed);
 		weightMatrixGen(inputs, inputs);
 	}
 
-	public NuralNetwork(long seed, int inputs, int outputs) {
+	public NeuralNetwork(long seed, int inputs, int outputs) {
 		this.seed = seed;
 		rand = new Random();
 		 weights = weightMatrixGen(inputs, outputs);
@@ -40,7 +40,7 @@ public class NuralNetwork {
 
 	public void train(int iterations) {
 		// for iteration in xrange(number_of_training_iterations)
-		Nuron n = new NuronSigmoid();
+		Neuron n = new NeuronSigmoid();
 		
 		for (int i = 0; i < iterations; i++) {
 			System.out.print("Epoch: " +(i+1));
@@ -60,7 +60,7 @@ public class NuralNetwork {
 	
 	public double[][] predict(double[][] input)
 	{
-		Nuron n = new NuronSigmoid();
+		Neuron n = new NeuronSigmoid();
 		double[][] output = n.think(input,this.weights);
 		
 		return output;
@@ -86,7 +86,7 @@ public class NuralNetwork {
 		return seed;
 	}
 
-	public NuralNetwork setSeed(long seed) {
+	public NeuralNetwork setSeed(long seed) {
 		this.seed = seed;
 		return this;
 	}
@@ -95,7 +95,7 @@ public class NuralNetwork {
 		return rand;
 	}
 
-	public NuralNetwork setRand(Random rand) {
+	public NeuralNetwork setRand(Random rand) {
 		this.rand = rand;
 		return this;
 	}
@@ -104,7 +104,7 @@ public class NuralNetwork {
 		return input;
 	}
 
-	public NuralNetwork setInput(double[][] input) {
+	public NeuralNetwork setInput(double[][] input) {
 		this.input = input;
 		return this;
 	}
@@ -113,7 +113,7 @@ public class NuralNetwork {
 		return output;
 	}
 
-	public NuralNetwork setOutput(double[][] output) {
+	public NeuralNetwork setOutput(double[][] output) {
 		this.output = output;
 		return this;
 	}
@@ -122,7 +122,7 @@ public class NuralNetwork {
 		return weights;
 	}
 
-	public NuralNetwork setWeights(double[][] weights) {
+	public NeuralNetwork setWeights(double[][] weights) {
 		this.weights = weights;
 		return this;
 	}
